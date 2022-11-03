@@ -11,13 +11,13 @@
 !pip install -r requirements.txt
 
 3. Run the project using : 
-!python detect.py --weights 'yolov7.pt' --weights2 'Helmet.pt' --conf 0.3 --class 0  --object 0  --source [Image/Video Name]
+!python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source [Image/Video Name]
 
 
 Where : yolov7.pt is the model used to detect person
         Helmet.pt is the model used to detect helmet
-        Image Name is the Name of the file you want to detect ex. helmet.jpg/.mp4
+        Image Name is the Name of the file you want to detect ex. image.jpg/video.mp4
         conf is the confidence threshold 
         class is so yolov7.pt detects only persons
-        objecty is so Helmets.pt checks for helmets only 
-        NOTE : if the models/image/video path is not directly yolov7 you should put the path instead without ''
+        object is so Helmets.pt checks for only helmets  
+        NOTE : if the models/image/video path is not directly yolov7 you should put the path instead 
