@@ -35,7 +35,9 @@ Training the model :
  
 1. clone the repo into your colab
 2. wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7_training.pt
-3. python train.py --batch 12 --epochs 10 --data [yamlfile] --weights yolov7_training --device 0 
+3. python train.py --batch 12 --epochs 10 --data [yamlfile] --weights yolov7_training --device 0 --to train your model
+   model will be stored in 'runs'-->'train'-->the latest 'exp' folder --> 'weights'-->best.pt
+4. python detect.py --weights runs/train/exp/weights/best.pt --conf 0.1 --source Test.jpg -- to test your output and confidence 
 
 Where :  --batch is batchsize 
          --epochs is the number o epochs you want to train the model
