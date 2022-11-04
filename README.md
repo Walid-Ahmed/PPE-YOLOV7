@@ -27,12 +27,21 @@ In this case the output was:![image](https://user-images.githubusercontent.com/2
 
 You can also run this code on a video using TestVideo.mp4
 
-
+![Test](https://user-images.githubusercontent.com/20994789/199861245-00aed46f-9068-416d-96de-a47948a44b6f.gif)
 
 Training the model :
 
  To train the model you need to provide a dataset in the type yolov7 where annotaions are stored in .txt files
  
+1. clone the repo into your colab
+2. wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7_training.pt
+3. python train.py --batch 12 --epochs 10 --data [yamlfile] --weights yolov7_training --device 0 
+
+Where :  --batch is batchsize 
+         --epochs is the number o epochs you want to train the model
+         --data the path of the yaml file in your dataset
+         --wieghts pre set weights for training
+         --device 0 in case gpu and cpu in case of cpu
  
 
 
