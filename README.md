@@ -9,11 +9,10 @@ This code is designed through pipelining YOLOV7 models to detect whether the wor
 
 
 <h3>Installation:</h3> 
-<li>jhkjh
--- git clone https://github.com/Walid-Ahmed/PPE-YOLOV7 -- Used to clone this repo 
--- cd PPE-YOLOV7 -- moves you into the folder  
--- pip install -r requirements.txt ---installs all the needed libraries
--- if needed
+<li>git clone https://github.com/Walid-Ahmed/PPE-YOLOV7 -- Used to clone this repo 
+<li>cd PPE-YOLOV7 -- moves you into the folder  
+<li>pip install -r requirements.txt ---installs all the needed libraries
+<li>if needed
         pip install torchvision==0.9.1
         pip install "opencv-python-headless<4.3"
 
