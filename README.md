@@ -1,17 +1,23 @@
 # PPE-YOLOV7
 
 This code is designed through pipelining YOLOV7 models to detect whether the workers at a construction site are wearing safety helmets or not.
-Some limiting factors are that now the code detects if the helmet is anywhere within the bounding box of the worker , yet with simple code this could be overcomed .
 
 
 
 
-1 . Download The Colab PPE-YOLOV7 and Run :
 
-Code Rundown : 
+
+
+Installation : 
 1. git clone https://github.com/Walid-Ahmed/PPE-YOLOV7 -- Used to clone this repo into your colab notebook
-2. !pip install -r requirements.txt & cd PPE-YOLOV7 -- moves you into the folder and installs all the needed libraries
-3. python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Test.jpg 
+2. cd PPE-YOLOV7 -- moves you into the folder  
+3. pip install -r requirements.txt ---installs all the needed libraries
+4. if needed
+        pip install torchvision==0.9.1
+        pip install "opencv-python-headless<4.3"
+
+Running the code
+4. python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Test.jpg 
 
 Where : yolov7.pt is the model used to detect person
         Helmet.pt is the model used to detect helmet
