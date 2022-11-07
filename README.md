@@ -29,7 +29,7 @@ You can also run this code on a video using TestVideo.mp4
 
  ![Test](https://user-images.githubusercontent.com/20994789/199861245-00aed46f-9068-416d-96de-a47948a44b6f.gif)
 
-        <h3>Training the model :</h3>
+ <h3>Training the model :</h3>
 
  To train the model you need to provide a dataset in the type yolov7 where annotaions are stored in .txt files
  
