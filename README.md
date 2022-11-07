@@ -8,9 +8,7 @@ This code is designed through pipelining YOLOV7 models to detect whether the wor
 <li>git clone https://github.com/Walid-Ahmed/PPE-YOLOV7 -- Used to clone this repo 
 <li>cd PPE-YOLOV7 -- moves you into the folder  
 <li>pip install -r requirements.txt ---installs all the needed libraries
-<li>if needed </br>
-        pip install torchvision==0.9.1 </br>
-        pip install "opencv-python-headless<4.3"
+<li>if needed pip install torchvision==0.9.1  and pip install "opencv-python-headless<4.3"
 
 <h3>Running the code</h3> : 
 python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Test.jpg 
