@@ -8,8 +8,8 @@ This code is designed through pipelining YOLOV7 models to detect whether the wor
 
 
 
-Installation : 
-1. git clone https://github.com/Walid-Ahmed/PPE-YOLOV7 -- Used to clone this repo into your colab notebook
+<h3>Installation</h3> : 
+1. git clone https://github.com/Walid-Ahmed/PPE-YOLOV7 -- Used to clone this repo 
 2. cd PPE-YOLOV7 -- moves you into the folder  
 3. pip install -r requirements.txt ---installs all the needed libraries
 4. if needed
