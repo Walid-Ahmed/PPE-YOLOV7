@@ -10,8 +10,8 @@ This code is designed through pipelining YOLOV7 models to detect whether the wor
 <li>pip install -r requirements.txt ---installs all the needed libraries
 <li>if needed pip install torchvision==0.9.1  and pip install "opencv-python-headless<4.3"
 
-<h3>Running the code</h3> : 
-python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Test.jpg 
+<h3>Running the codeL</h3> 
+<li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Test.jpg 
 
 Where : yolov7.pt is the model used to detect person
         Helmet.pt is the model used to detect helmet
@@ -21,15 +21,15 @@ Where : yolov7.pt is the model used to detect person
         object 0 is so Helmets.pt checks for only helmets  
         NOTE : if the models/image/video path is not directly yolov7 you should put the path instead 
 
-2. After A Successful run a folder is created "runs" you go into 'detect' and then the latest exp file ex. 'exp4' to find your output.
+<li> After A Successful run a folder is created "runs" you go into 'detect' and then the latest exp file ex. 'exp4' to find your output.
 
 In this case the output was:![image](https://user-images.githubusercontent.com/20994789/199857591-16dfe955-b4e5-43ec-96d8-1c4cca14308c.png)
 
 You can also run this code on a video using TestVideo.mp4
 
-![Test](https://user-images.githubusercontent.com/20994789/199861245-00aed46f-9068-416d-96de-a47948a44b6f.gif)
+<li> ![Test](https://user-images.githubusercontent.com/20994789/199861245-00aed46f-9068-416d-96de-a47948a44b6f.gif)
 
-Training the model :
+        <h3>Training the model :</h3>
 
  To train the model you need to provide a dataset in the type yolov7 where annotaions are stored in .txt files
  
