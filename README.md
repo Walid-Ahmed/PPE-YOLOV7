@@ -10,7 +10,7 @@ This code is designed through pipelining YOLOV7 models to detect whether the wor
 <li>pip install -r requirements.txt ---installs all the needed libraries
 <li>if needed pip install torchvision==0.9.1  and pip install "opencv-python-headless<4.3"
 
-<h3>Running the codeL</h3> 
+<h3>Running the code:</h3> 
 <li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Test.jpg 
 
 Where : yolov7.pt is the model used to detect person
