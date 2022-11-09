@@ -9,11 +9,13 @@ This code is designed through pipelining YOLOV7 models to detect whether the wor
 <li>cd PPE-YOLOV7 -- moves you into the folder  
 <li>pip install -r requirements.txt ---installs all the needed libraries
 <li>if needed pip install torchvision==0.9.1  and pip install "opencv-python-headless<4.3"
-
+ 
+<h4>You Can Simply Run The Code Using PPE-YOLOV7.ipynb by running it through either jupiter or colab.</h4>
+        
 <h3>Running the code:</h3> 
 
 <h2>Images</h2> 
-<li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Test.jpg 
+<li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Tests.jpg 
 
 Where : yolov7.pt is the model used to detect person
         Helmet.pt is the model used to detect helmet
@@ -24,18 +26,19 @@ Where : yolov7.pt is the model used to detect person
         NOTE : if the models/image/video path is not directly yolov7 you should put the path instead 
 
 <li> After A Successful run a folder is created "runs" you go into 'detect' and then the latest exp file ex. 'exp4' to find your output.
+![FinalImage](https://user-images.githubusercontent.com/20994789/200955966-54bdfb4f-20d1-4ed3-9537-67a9bc7764df.png)
 
-In this case the output was:![image](https://user-images.githubusercontent.com/20994789/199857591-16dfe955-b4e5-43ec-96d8-1c4cca14308c.png)
 
-an update to code was introduced later where the model draws a bounding box around the helmets as well as the people and produces a text file with Per Frame Analysis :
-In this case the output Image Was:![39e3504d-347e-4a57-83b2-ec07d5835448](https://user-images.githubusercontent.com/20994789/200872830-079af635-de7d-460e-9278-90131bf61e57.jpg)
-
+And :[39e3504d-347e-4a57-83b2-ec07d5835448](https://user-images.githubusercontent.com/20994789/200872830-079af635-de7d-460e-9278-90131bf61e57.jpg)
+        
+The Code Produces A Text File With A Report On Every Frame Given: 
 and the output text file included:
 
 Frame 1 :  3 People Wearing Helmets , Not Wearing Helmets.
 
-You can also run this code on a video using TestVideo.mp4
+
 <h2>Videos</h2> 
+You can also run this code on a video using TestVideo.mp4
 <li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source VideoTest.mp4
 
 
