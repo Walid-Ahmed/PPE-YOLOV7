@@ -26,10 +26,12 @@ Where : yolov7.pt is the model used to detect person
         NOTE : if the models/image/video path is not directly yolov7 you should put the path instead 
 
 <li> After A Successful run a folder is created "runs" you go into 'detect' and then the latest exp file ex. 'exp4' to find your output.
-![FinalImage](https://user-images.githubusercontent.com/20994789/200955966-54bdfb4f-20d1-4ed3-9537-67a9bc7764df.png)
+ 
+
+![FinalImage](https://user-images.githubusercontent.com/20994789/200956605-385ffd4e-d3a6-4a16-a69a-2397acf03995.png)
 
 
-And :[39e3504d-347e-4a57-83b2-ec07d5835448](https://user-images.githubusercontent.com/20994789/200872830-079af635-de7d-460e-9278-90131bf61e57.jpg)
+And :![39e3504d-347e-4a57-83b2-ec07d5835448](https://user-images.githubusercontent.com/20994789/200872830-079af635-de7d-460e-9278-90131bf61e57.jpg)
         
 The Code Produces A Text File With A Report On Every Frame Given: 
 and the output text file included:
