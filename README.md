@@ -11,6 +11,8 @@ This code is designed through pipelining YOLOV7 models to detect whether the wor
 <li>if needed pip install torchvision==0.9.1  and pip install "opencv-python-headless<4.3"
 
 <h3>Running the code:</h3> 
+
+<h2>Images</h2> 
 <li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Test.jpg 
 
 Where : yolov7.pt is the model used to detect person
@@ -33,8 +35,27 @@ and the output text file included:
 Frame 1 :  3 People Wearing Helmets , Not Wearing Helmets.
 
 You can also run this code on a video using TestVideo.mp4
+<h2>Videos</h2> 
+<li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source VideoTest.mp4
 
- ![Test](https://user-images.githubusercontent.com/20994789/199861245-00aed46f-9068-416d-96de-a47948a44b6f.gif)
+
+Where : yolov7.pt is the model used to detect person
+        Helmet.pt is the model used to detect helmet
+        Test.jpg is the Name of the file you want to detect ex. image.jpg/video.mp4
+        conf 0.3 is the confidence threshold 
+        class 0 is so yolov7.pt detects only persons
+        object 0 is so Helmets.pt checks for only helmets  
+        NOTE : if the models/image/video path is not directly yolov7 you should put the path instead 
+
+<li> After A Successful run a folder is created "runs" you go into 'detect' and then the latest exp file ex. 'exp4' to find your output.
+
+
+![FinalResult](https://user-images.githubusercontent.com/20994789/200954590-c2b7824f-c39a-43e4-b3ce-82ea148d7450.gif)
+
+
+And Text File : 
+[TestVideo.txt](https://github.com/Walid-Ahmed/PPE-YOLOV7/files/9975597/TestVideo.txt)
+
 
  <h3>Training the model :</h3>
 
