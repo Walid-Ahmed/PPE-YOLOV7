@@ -21,7 +21,9 @@ Black = (0,0,0)
 White = (255,255,255)
 
 
+
 def detect(save_img=False):
+
     source, weights,weights2, view_img, save_txt, imgsz, trace = opt.source, opt.weights,opt.weights2, opt.view_img, opt.save_txt, opt.img_size, not opt.no_trace
     save_img = not opt.nosave and not source.endswith('.txt')  # save inference images
     webcam = source.isnumeric() or source.endswith('.txt') or source.lower().startswith(
@@ -68,6 +70,7 @@ def detect(save_img=False):
     else:
         dataset = LoadImages(source, img_size=imgsz, stride=stride)
 
+
     # Get names and colors
     names = model.module.names if hasattr(model, 'module') else model.names
     names2 = model2.module.names if hasattr(model2, 'module') else model2.names
@@ -85,7 +88,8 @@ def detect(save_img=False):
     old_img1_b = 1
 
     t0 = time.time()
-    for path, img, im0s, vid_cap in dataset:
+    Frame = 0
+    for vid,path, img, im0s, vid_cap in dataset:
         img = torch.from_numpy(img).to(device)
         img = img.half() if half else img.float()  # uint8 to fp16/32
         img /= 255.0  # 0 - 255 to 0.0 - 1.0
@@ -116,9 +120,10 @@ def detect(save_img=False):
 
         Helmets = 0
         NoHelmets = 0
-        Frame = 0
+
 
         # Process detections
+
         for i, det in enumerate(pred):  # detections per image
             if webcam:  # batch_size >= 1
                 p, s, im0, frame = path[i], '%g: ' % i, im0s[i].copy(), dataset.count
@@ -176,22 +181,20 @@ def detect(save_img=False):
 
 
                     Helmet = 0
-                    # print("IM0 = ", im0.shape)
-                    # print("IM1 = ", im1.shape)
-                    # print("IMG0 = ", img.shape)
-                    # print("IMG1 = ", img1.shape)
-
                     for i2, det2 in enumerate(pred2):
                         NewCords = []
                         for *xyxy2, conf2, cls2 in reversed(det2):
                             Helmet = 1
-                            print("Old : ", xyxy)
-                            print("Part = " , xyxy2)
-                            NewCords.append(xyxy[0] + (xyxy2[0]))
-                            NewCords.append(xyxy[1] + (xyxy2[1]))
-                            NewCords.append(NewCords[0] + ((xyxy2[2]-xyxy2[0])))
-                            NewCords.append(NewCords[1] + ((xyxy2[3]-xyxy2[1])))
-                            print("New = " ,NewCords)
+                            if vid==1:
+                                NewCords.append(xyxy[0] + (xyxy2[0]*0.5))
+                                NewCords.append(xyxy[1] + (xyxy2[1]*0.5))
+                                NewCords.append(NewCords[0] + ((xyxy2[2]-xyxy2[0])*0.5))
+                                NewCords.append(NewCords[1] + ((xyxy2[3]-xyxy2[1])*0.5))
+                            else :
+                                NewCords.append(xyxy[0] + (xyxy2[0]))
+                                NewCords.append(xyxy[1] + (xyxy2[1]))
+                                NewCords.append(NewCords[0] + ((xyxy2[2] - xyxy2[0])))
+                                NewCords.append(NewCords[1] + ((xyxy2[3] - xyxy2[1])))
                             break
 
 
@@ -224,7 +227,7 @@ def detect(save_img=False):
             print(f'{s}Done. ({(1E3 * (t2 - t1)):.1f}ms) Inference, ({(1E3 * (t3 - t2)):.1f}ms) NMS')
             Frame = Frame + 1
             with open(save_path[:-4] + '.txt', 'a') as f:
-                f.write(f'Frame {Frame} : Workers {HelmetsLabel} , Workers {NoHelmetsLabel} ')
+                f.write(f'Frame {Frame} : Workers {HelmetsLabel} , Workers {NoHelmetsLabel} \n')
 
 
 
