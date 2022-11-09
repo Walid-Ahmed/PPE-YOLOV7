@@ -25,6 +25,13 @@ Where : yolov7.pt is the model used to detect person
 
 In this case the output was:![image](https://user-images.githubusercontent.com/20994789/199857591-16dfe955-b4e5-43ec-96d8-1c4cca14308c.png)
 
+an update to code was introduced later where the model draws a bounding box around the helmets as well as the people and produces a text file with Per Frame Analysis :
+In this case the output Image Was:![39e3504d-347e-4a57-83b2-ec07d5835448](https://user-images.githubusercontent.com/20994789/200872830-079af635-de7d-460e-9278-90131bf61e57.jpg)
+
+and the output text file included:
+
+Frame 1 :  3 People Wearing Helmets , Not Wearing Helmets.
+
 You can also run this code on a video using TestVideo.mp4
 
  ![Test](https://user-images.githubusercontent.com/20994789/199861245-00aed46f-9068-416d-96de-a47948a44b6f.gif)
