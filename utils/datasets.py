@@ -126,6 +126,7 @@ class _RepeatSampler(object):
 
 
 class LoadImages:  # for inference
+    vid = 0
     def __init__(self, path, img_size=640, stride=32):
         p = str(Path(path).absolute())  # os-agnostic absolute path
         if '*' in p:
@@ -179,6 +180,7 @@ class LoadImages:  # for inference
 
             self.frame += 1
             print(f'video {self.count + 1}/{self.nf} ({self.frame}/{self.nframes}) {path}: ', end='')
+            vid = 1
 
         else:
             # Read image
@@ -186,6 +188,7 @@ class LoadImages:  # for inference
             img0 = cv2.imread(path)  # BGR
             assert img0 is not None, 'Image Not Found ' + path
             #print(f'image {self.count}/{self.nf} {path}: ', end='')
+            vid = 0
 
         # Padded resize
         img = letterbox(img0, self.img_size, stride=self.stride)[0]
@@ -194,7 +197,7 @@ class LoadImages:  # for inference
         img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
         img = np.ascontiguousarray(img)
 
-        return path, img, img0, self.cap
+        return vid, path, img, img0, self.cap
 
     def new_video(self, path):
         self.frame = 0
@@ -257,7 +260,7 @@ class LoadWebcam:  # for inference
         img = img[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
         img = np.ascontiguousarray(img)
 
-        return img_path, img, img0, None
+        return None,img_path, img, img0, None
 
     def __len__(self):
         return 0
