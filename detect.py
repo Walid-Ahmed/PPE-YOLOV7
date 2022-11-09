@@ -116,6 +116,7 @@ def detect(save_img=False):
 
         Helmets = 0
         NoHelmets = 0
+        Frame = 0
 
         # Process detections
         for i, det in enumerate(pred):  # detections per image
@@ -175,9 +176,25 @@ def detect(save_img=False):
 
 
                     Helmet = 0
+                    # print("IM0 = ", im0.shape)
+                    # print("IM1 = ", im1.shape)
+                    # print("IMG0 = ", img.shape)
+                    # print("IMG1 = ", img1.shape)
+
                     for i2, det2 in enumerate(pred2):
+                        NewCords = []
                         for *xyxy2, conf2, cls2 in reversed(det2):
                             Helmet = 1
+                            print("Old : ", xyxy)
+                            print("Part = " , xyxy2)
+                            NewCords.append(xyxy[0] + (xyxy2[0]))
+                            NewCords.append(xyxy[1] + (xyxy2[1]))
+                            NewCords.append(NewCords[0] + ((xyxy2[2]-xyxy2[0])))
+                            NewCords.append(NewCords[1] + ((xyxy2[3]-xyxy2[1])))
+                            print("New = " ,NewCords)
+                            break
+
+
 
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
@@ -189,6 +206,8 @@ def detect(save_img=False):
                         if Helmet == 1 :
                             label = f'{names[int(cls)]} {conf:.2f} Wearing Helmet'
                             plot_one_box(xyxy, im0, label=label, color=Green, line_thickness=1)
+                            label2 = f' Helmet'
+                            plot_one_box(NewCords, im0, label=label2, color=Green, line_thickness=1)
                             Helmets = Helmets + 1
                         else:
                             label = f'{names[int(cls)]} {conf:.2f} Not Wearing Helmet'
@@ -203,6 +222,11 @@ def detect(save_img=False):
             plot_Label(10, 55, im0, Black, NoHelmetsLabel, line_thickness=3)
             plot_Label(10, 55, im0, White, NoHelmetsLabel, line_thickness=2)
             print(f'{s}Done. ({(1E3 * (t2 - t1)):.1f}ms) Inference, ({(1E3 * (t3 - t2)):.1f}ms) NMS')
+            Frame = Frame + 1
+            with open(save_path[:-4] + '.txt', 'a') as f:
+                f.write(f'Frame {Frame} : Workers {HelmetsLabel} , Workers {NoHelmetsLabel} ')
+
+
 
             # Stream results
             if view_img:
