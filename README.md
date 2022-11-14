@@ -15,7 +15,7 @@ This code is designed through pipelining YOLOV7 models to detect whether the wor
 <h3>Running the code:</h3> 
 
 <h2>Images</h2> 
-<li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Tests.jpg 
+<li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source Test.jpg 
 
 Where : yolov7.pt is the model used to detect person
         Helmet.pt is the model used to detect helmet
