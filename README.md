@@ -28,7 +28,9 @@ Where : yolov7.pt is the model used to detect person
 <li> After A Successful run a folder is created "runs" you go into 'detect' and then the latest exp file ex. 'exp4' to find your output.
  
 
-![FinalImage](https://user-images.githubusercontent.com/20994789/200956605-385ffd4e-d3a6-4a16-a69a-2397acf03995.png)
+
+![TestResult](https://user-images.githubusercontent.com/20994789/201556683-d0561c70-1f36-4ce7-8043-86b488f88bab.jpg)
+
 
 
 And :![39e3504d-347e-4a57-83b2-ec07d5835448](https://user-images.githubusercontent.com/20994789/200872830-079af635-de7d-460e-9278-90131bf61e57.jpg)
