@@ -41,7 +41,7 @@ Frame 1 :  3 People Wearing Helmets , Not Wearing Helmets.
 
 <h2>Videos</h2> 
 You can also run this code on a video using TestVideo.mp4
-<li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source VideoTest.mp4
+<li>python detect.py --weights yolov7.pt --weights2 Helmet.pt --conf 0.3 --class 0  --object 0  --source TestVideo.mp4
 
 
 Where : yolov7.pt is the model used to detect person
