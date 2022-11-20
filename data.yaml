@@ -1,0 +1,7 @@
+names:
+- head
+- helmet
+- person
+nc: 3
+train: /content/Dataset/train/images
+val: /content/Dataset/valid/images
