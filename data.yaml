@@ -1,6 +1,6 @@
 names:
-- head
 - helmet
+- head
 - person
 nc: 3
 train: /content/Dataset/train/images
