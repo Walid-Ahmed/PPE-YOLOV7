@@ -1,7 +1,8 @@
-names:
-- helmet
-- head
-- person
-nc: 3
-train: /content/Dataset/train/images
-val: /content/Dataset/valid/images
+train: ../Dataset/helm/images/train/
+val: ../Dataset/helm/images/valid/
+
+# number of classes
+nc: 2
+
+# class names
+names: ['head', 'helmet']
